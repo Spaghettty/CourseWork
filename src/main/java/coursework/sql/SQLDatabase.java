@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SQLDatabase {
-    private final String HOSTNAME = "jdbc:mysql://sql2.freesqldatabase.com:3306/";
-    private final String USERNAME = "";
-    private final String PASSWORD = "";
+    private final String HOSTNAME = "jdbc:mysql://sql2.freesqldatabase.com:3306/sql2232670";
+    private final String USERNAME = "sql2232670";
+    private final String PASSWORD = "yT3%nE3!";
     private Connection connection;
 
     public SQLDatabase(){
