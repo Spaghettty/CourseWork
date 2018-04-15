@@ -68,6 +68,7 @@ public class QuestionLib {
 		int j = 1;
 		for (String city : questions.get(i).getCities()) {
 			sb.append(j + ". " + city + "\n");
+			j = j+1;
 		}
 		return sb.toString();
 	}
