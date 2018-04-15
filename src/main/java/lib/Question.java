@@ -7,7 +7,7 @@ public class Question {
     HashMap<String, String> map;
     private String correctCountry;
     private String correctCity;
-    ArrayList<String> cities;
+    private ArrayList<String> cities;
 
     public Question(HashMap<String, String> map){
         this.map = map;
@@ -37,7 +37,7 @@ public class Question {
     }
 
     private void setCities(){
-        // Add each city to the map
+        // Add each city to the array
         for (String key :  map.keySet()) {
             cities.add(map.get(key));
         }
