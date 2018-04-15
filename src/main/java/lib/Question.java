@@ -5,22 +5,23 @@ import java.util.HashMap;
 
 public class Question {
     HashMap<String, String> map;
-    String correctCity;
-
+    private String correctCountry;
+    private String correctCity;
 
     public Question(HashMap<String, String> map){
         this.map = map;
-        setCorrectCity();
+        setCorrectAnswers();
     }
 
     // Set the correct answer
-    public void setCorrectCity(){
+    public void setCorrectAnswers(){
         // Pick a random number between 0-2
         int r = (int) (Math.random() * (3));
         // Get a list of all the keys
         ArrayList<String> keys = new ArrayList<String>(map.keySet());
-        // Set the correct answer using the random number
-        correctCity = keys.get(r);
+        // Set the correct answers using the random number
+        correctCountry = keys.get(r);
+        correctCity = map.get(correctCountry);
     }
 
     // user input
