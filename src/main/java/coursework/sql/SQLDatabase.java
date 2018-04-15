@@ -23,6 +23,7 @@ public class SQLDatabase {
             c.printStackTrace();
         }
 
+        // Connect to the database
         try {
             connection = DriverManager.getConnection(HOSTNAME, USERNAME, PASSWORD);
         } catch (SQLException sqlEx) {
