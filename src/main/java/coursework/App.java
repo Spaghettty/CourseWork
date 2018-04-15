@@ -3,14 +3,13 @@ package coursework;
 import coursework.lib.QuestionLib;
 
 public class App {
-
+	public QuestionLib questionLib;
 
 	public static void main(String[] args) {
 		App app = new App();
-		QuestionLib questionLib = new QuestionLib();
-		for (int questionNumber = 0; questionNumber < questionLib.getMaxQuestions(); questionNumber++){
-			System.out.println((questionNumber + 1) + ": " + questionLib.questionPrint(questionNumber));
-			System.out.println(questionLib.answersPrint(questionNumber));
+		for (int questionNumber = 0; questionNumber < app.questionLib.getMaxQuestions(); questionNumber++){
+			System.out.println((questionNumber + 1) + ": " + app.questionLib.questionPrint(questionNumber));
+			System.out.println(app.questionLib.answersPrint(questionNumber));
 			//break
 			app.answerQuestion(questionNumber);
 		}
@@ -19,11 +18,11 @@ public class App {
 	}
 
 	public App(){
-
+		questionLib = new QuestionLib();
 	}
 
 	public void answerQuestion(int questionNumber){
-
+		questionLib.getQuestion(questionNumber).answer(11);
 	}
 
 }
