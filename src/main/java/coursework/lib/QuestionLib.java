@@ -37,7 +37,7 @@ public class QuestionLib {
 		}
 	}
 
-	public Question getQeuestion(int i){
+	public Question getQuestion(int i){
 		return questions.get(i);
 	}
 
