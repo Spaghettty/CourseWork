@@ -3,14 +3,13 @@ package coursework.lib;
 import coursework.sql.SQLQueries;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * The QuestionLib has library methods for questionAnswer
  */
 public class QuestionLib {
 	// Build a list of maps of questions to answers
-	ArrayList<HashMap<Question, Boolean>> questionAnswer = new ArrayList<>();
+	ArrayList<Question> questions = new ArrayList<>();
 	SQLQueries sqlQueries;
 
 
@@ -31,13 +30,14 @@ public class QuestionLib {
 	private void buildQuestions(int limit){
 		int i = 0;
 		while (i < limit){
-			// Add a map of the Question object with the answer false to the array
-			// (this will turn true if they get the answer correct)
-			HashMap<Question, Boolean> questionBooleanHashMap = new HashMap<>();
-			questionBooleanHashMap.put(new Question(sqlQueries.getQuestion()), false);
-			questionAnswer.add(i, questionBooleanHashMap);
+			// Add a Question to the array
+			questions.add(new Question(sqlQueries.getQuestion()));
 			i=i++;
 		}
+	}
+
+	public Question getQeuestion(int i){
+		return questions.get(i);
 	}
 
 
