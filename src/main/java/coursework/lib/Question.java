@@ -10,7 +10,7 @@ public class Question {
     private String correctCity;
     private ArrayList<String> cities = new ArrayList<>();
     // The Question is wrong until answered correctly
-    private Boolean correct = false;
+    private Boolean correct = false; // here not sure where the set method is but i think i made one
 
     /**
      * Constructor for the class

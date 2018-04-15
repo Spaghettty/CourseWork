@@ -77,4 +77,16 @@ public class QuestionLib {
 		return maxQuestions;
 	}
 
+	/**
+	 * Get the score for the questions
+	 * @return {@link int} - The score
+	 */
+	public int getScore() {
+		int score = 0;
+		for (Question question : questions){
+			if (question.getCorrect()) score = score + 1;
+		}
+		return score;
+	}
+
 }

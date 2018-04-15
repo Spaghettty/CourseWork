@@ -9,6 +9,5 @@
         <module name="CourseWorkP" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
   </component>
 </project>

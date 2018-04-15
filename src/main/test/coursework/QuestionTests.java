@@ -16,6 +16,6 @@ public class QuestionTests {
         map.put("testcountry3", "testcity2");
         Question test = new Question(map);
         String output = test.getCorrectCountry();
-        Assert.assertEquals("testcountry" + (test.getCorrectCountryNumber() + 1), output);
+        Assert.assertEquals("testcountry" + (test.getCorrectCountryNumber()), output);
     }
 }
