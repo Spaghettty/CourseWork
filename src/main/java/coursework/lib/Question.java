@@ -8,7 +8,9 @@ public class Question {
     private String correctCountry;
     private int correctCountryNumber;
     private String correctCity;
-    private ArrayList<String> cities;
+    private ArrayList<String> cities = new ArrayList<>();
+    // The Question is wrong until answered correctly
+    private Boolean correct = false;
 
     /**
      * Constructor for the class
@@ -63,5 +65,21 @@ public class Question {
         for (String key :  map.keySet()) {
             cities.add(map.get(key));
         }
+    }
+
+    /**
+     * Set the answer to the question
+     * @param bol - A {@link Boolean} for the answer - true is answered correctly
+     */
+    public void setCorrect(boolean bol){
+        correct = bol;
+    }
+
+    /**
+     * Has the question been answered correctly
+     * @return {@link Boolean} - Ture is the question has been answered correctly
+     */
+    public Boolean getCorrect(){
+        return correct;
     }
 }
