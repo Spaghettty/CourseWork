@@ -29,8 +29,14 @@ public class SQLDatabase {
             System.err.println("Unable to connect to the database: " + sqlEx.getMessage());
             sqlEx.printStackTrace();
         }
+        
+        
     }
 
+    /**
+     * Return the database connection
+     * @return {@link Connection} - The database connection
+     */
     public Connection getConnection() {
         return connection;
     }

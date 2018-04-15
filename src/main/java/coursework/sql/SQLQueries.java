@@ -17,6 +17,9 @@ import java.sql.ResultSet;
 public class SQLQueries {
 	private SQLDatabase database;
 
+	/**
+	 * Constructor for the class
+	 */
 	public SQLQueries() {
 		init();
 	}
@@ -26,10 +29,14 @@ public class SQLQueries {
 
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String lookup() {
 		try {
 			Statement statement = database.getConnection().createStatement();
-			String SQL = "SELECT * FROM capitals";
+			String SQL = "SELECT * FROM capitals ORDER BY RAND() LIMIT 3";
 			ResultSet rs = statement.executeQuery(SQL);
 			while (rs.next()) {
 				System.out.println("Country: " + WordUtils.capitalizeFully(rs.getString(1)) + ", City: "
@@ -39,6 +46,9 @@ public class SQLQueries {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+
+	
 
 		return null;
 	}
