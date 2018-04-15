@@ -19,11 +19,11 @@ public class Question {
     // Set the correct answer
     public void setCorrectAnswers(){
         // Pick a random number between 0-2
-        int r = (int) (Math.random() * (3));
+        correctCountryNumber = (int) (Math.random() * (3));
         // Get a list of all the keys
         ArrayList<String> keys = new ArrayList<String>(map.keySet());
         // Set the correct answers using the random number
-        correctCountry = keys.get(r);
+        correctCountry = keys.get(correctCountryNumber);
         correctCity = map.get(correctCountry);
     }
 
