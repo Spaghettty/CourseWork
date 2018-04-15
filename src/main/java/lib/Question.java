@@ -7,10 +7,12 @@ public class Question {
     HashMap<String, String> map;
     private String correctCountry;
     private String correctCity;
+    ArrayList<String> cities;
 
     public Question(HashMap<String, String> map){
         this.map = map;
         setCorrectAnswers();
+        setCities();
     }
 
     // Set the correct answer
@@ -25,9 +27,19 @@ public class Question {
     }
 
     // user input
-    // choose an answer
-    // country
 
+    public String getCorrectCountry(){
+        return correctCountry;
+    }
 
-    // cities
+    public ArrayList<String> getCities(){
+        return cities;
+    }
+
+    private void setCities(){
+        // Add each city to the map
+        for (String key :  map.keySet()) {
+            cities.add(map.get(key));
+        }
+    }
 }
