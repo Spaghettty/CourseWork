@@ -52,6 +52,14 @@ public class Question {
     }
 
     /**
+     * Get the correct country number, used in framing the question
+     * @return {@link String} - The correct country
+     */
+    public int getCorrectCountryNumber(){
+        return correctCountryNumber;
+    }
+
+    /**
      * Get the list of cities for a question
      * @return {@link ArrayList} - Of {@link String} city names
      */
