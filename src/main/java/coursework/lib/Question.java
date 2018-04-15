@@ -1,4 +1,4 @@
-package lib;
+package coursework.lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class Question {
     HashMap<String, String> map;
     private String correctCountry;
+    private int correctCountryNumber;
     private String correctCity;
     private ArrayList<String> cities;
 
@@ -26,7 +27,9 @@ public class Question {
         correctCity = map.get(correctCountry);
     }
 
-    // user input
+    public boolean answer(int i){
+        return i == correctCountryNumber;
+    }
 
     public String getCorrectCountry(){
         return correctCountry;
