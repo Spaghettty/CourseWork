@@ -31,8 +31,8 @@ public class SQLQueries {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Gets three random countries and cities
+	 * @return {@link HashMap} - Of country->city
 	 */
 	public HashMap<String, String> getQuestion() {
 		HashMap<String, String> question = new HashMap<String, String>();
