@@ -55,7 +55,7 @@ public class QuestionLib {
 	 * @return {@link String} - The printed answers
 	 */
 	public String questionPrint(int i){
-		return "What is the capital of " + questions.get(i).getCorrectCountry() + "?\n";
+		return "What is the capital of " + questions.get(i).getCorrectCountry() + "?";
 	}
 
 	/**
