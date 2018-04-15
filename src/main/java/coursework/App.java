@@ -1,20 +1,16 @@
 package coursework;
 
-import coursework.sql.SQLQueries;
-
-import java.util.HashMap;
+import coursework.lib.QuestionLib;
 
 public class App {
 	public static void main(String[] args) {
-		System.out.println("Ayyyy");
-		System.out.println();
-		SQLQueries sqlQueries = new SQLQueries();
-		HashMap<String, String> questions = sqlQueries.getQuestion();
-		for (String key : questions.keySet()){
-			System.out.println("Country: " + key + ", City: "
-					+ questions.get(key));
+		QuestionLib questionLib = new QuestionLib();
+		for (int i = 0; i < questionLib.getMaxQuestions(); i++){
+			System.out.println(questionLib.questionPrint(i));
+			System.out.println(questionLib.answersPrint(i));
 		}
-	
+
+
 	}
 
 }

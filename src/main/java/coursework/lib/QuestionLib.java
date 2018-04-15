@@ -9,8 +9,10 @@ import java.util.ArrayList;
  */
 public class QuestionLib {
 	// Build a list of maps of questions to answers
-	ArrayList<Question> questions = new ArrayList<>();
-	SQLQueries sqlQueries;
+	private ArrayList<Question> questions = new ArrayList<>();
+	private SQLQueries sqlQueries;
+	private int currentQuestion = 0;
+	private int maxQuestions = 10;
 
 
 	/**
@@ -23,16 +25,15 @@ public class QuestionLib {
 	// Initialise the class
 	private void init(){
 		sqlQueries = new SQLQueries();
-		buildQuestions(10);
+		buildQuestions();
 	}
 
 	// Make questions and add them to the map in memory
-	private void buildQuestions(int limit){
-		int i = 0;
-		while (i < limit){
+	private void buildQuestions(){
+		for (int i = 0; i < maxQuestions; i++) {
 			// Add a Question to the array
 			questions.add(new Question(sqlQueries.getQuestion()));
-			i=i++;
+			i = i++;
 		}
 	}
 
@@ -40,6 +41,39 @@ public class QuestionLib {
 		return questions.get(i);
 	}
 
+	public int getCurrentQuestion(){
+		return currentQuestion;
+	}
 
+	private void incrementCurrentQuestion(){
+		currentQuestion = currentQuestion++;
+	}
+
+	/**
+	 * Return the printed question
+	 * @param i - The {@link int} question value
+	 * @return {@link String} - The printed answers
+	 */
+	public String questionPrint(int i){
+		return "What is the capital of " + questions.get(i).getCorrectCountry() + "?\n";
+	}
+
+	/**
+	 * Return the questions as a printable String
+	 * @param i - The {@link int} question value
+	 * @return {@link String} - The printed answers
+	 */
+	public String answersPrint(int i){
+		StringBuilder sb = new StringBuilder();
+		int j = 1;
+		for (String city : questions.get(i).getCities()) {
+			sb.append(j + ". " + city + "\n");
+		}
+		return sb.toString();
+	}
+
+	public int getMaxQuestions(){
+		return maxQuestions;
+	}
 
 }
