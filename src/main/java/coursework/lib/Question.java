@@ -10,7 +10,7 @@ public class Question {
     private String correctCity;
     private ArrayList<String> cities = new ArrayList<>();
     // The Question is wrong until answered correctly
-    private Boolean correct = false; // here not sure where the set method is but i think i made one
+    private Boolean correct = false;
 
     /**
      * Constructor for the class
@@ -67,7 +67,7 @@ public class Question {
         return cities;
     }
 
-    // Build a list opf cities
+    // Build a list of cities
     private void setCities(){
         // Add each city to the array
         for (String key :  map.keySet()) {

@@ -45,10 +45,6 @@ public class QuestionLib {
 		return currentQuestion;
 	}
 
-	private void incrementCurrentQuestion(){
-		currentQuestion = currentQuestion++;
-	}
-
 	/**
 	 * Return the printed question
 	 * @param i - The {@link int} question value
