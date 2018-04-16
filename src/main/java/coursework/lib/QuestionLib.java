@@ -41,6 +41,7 @@ public class QuestionLib {
 		return questions.get(i);
 	}
 
+	// Not used but could be
 	public int getCurrentQuestion(){
 		return currentQuestion;
 	}

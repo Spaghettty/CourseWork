@@ -29,7 +29,7 @@ public class Game {
             System.out.println("Correct!");
         } else {
             System.out.println("Sorry the correct answer is: " +
-                    questionLib.getQuestion(questionNumber).getCities().get(questionLib.getQuestion(questionNumber).getCorrectCountryNumber()));
+                    questionLib.getQuestion(questionNumber).getCorrectCity());
         }
         questionLib.getQuestion(questionNumber).setCorrect(userAnswer);
     }

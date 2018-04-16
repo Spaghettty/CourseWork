@@ -4,7 +4,9 @@ import coursework.lib.Question;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class QuestionTests {
 
@@ -17,17 +19,34 @@ public class QuestionTests {
     }
 
     @Test
-    public void testSomething() {
+    public void testQuestion() {
         HashMap<String, String> map = new HashMap<>();
-        map.put("testcountry1", "testcity2");
+        map.put("testcountry1", "testcity1");
         map.put("testcountry2", "testcity2");
-        map.put("testcountry3", "testcity2");
+        map.put("testcountry3", "testcity3");
         Question test = new Question(map);
         String output = test.getCorrectCountry();
 
-        String[] array = { "testcountry1", "testcountry2", "testcountry3" };
+        String[] countries = { "testcountry1", "testcountry2", "testcountry3" };
 
-        Assert.assertTrue(arrayContains(array, output));
+        // The order is not guaranteed hence this approach for testing
+        Assert.assertTrue(arrayContains(countries, output));
+        Assert.assertEquals(map.get(output), test.getCorrectCity());
+
+        Assert.assertFalse(test.getCorrect());
+        Assert.assertTrue(test.answer(test.getCorrectCountryNumber()+1));
+
+        test.setCorrect(true);
+        Assert.assertTrue(test.getCorrect());
+
+        String[] cities = { "testcity1", "testcity2", "testcity3" };
+
+        // The order is not guaranteed hence this approach for testing
+        Assert.assertEquals(3, test.getCities().size());
+        for (String city : cities){
+            Assert.assertTrue(test.getCities().contains(city));
+        }
+
     }
 
 
