@@ -3,15 +3,26 @@ package coursework.game;
 import javax.swing.*;
 
 public class GameGui {
-    private JTextField textField1;
+    private JTextField answer;
     private JPanel panel1;
-    private JLabel questiondisplay;
+    private JLabel question;
+
+    public GameGui(){
+
+    }
 
     public static void main(String[] args) {
+        GameGui gameGui = new GameGui();
         JFrame frame = new JFrame("GameGui");
-        frame.setContentPane(new GameGui().panel1);
+        frame.setContentPane(gameGui.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        gameGui.question.setText("anus");
         frame.setVisible(true);
+        int i = 0;
+        while (true) {
+            gameGui.question.setText("anus" + i);
+            i = i + 1;
+        }
     }
 }
