@@ -17,11 +17,11 @@ public class GameGui {
         frame.setContentPane(gameGui.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        gameGui.question.setText("anus");
+        gameGui.question.setText("hhh");
         frame.setVisible(true);
         int i = 0;
         while (true) {
-            gameGui.question.setText("anus" + i);
+            gameGui.question.setText("hhh" + i);
             i = i + 1;
         }
     }
