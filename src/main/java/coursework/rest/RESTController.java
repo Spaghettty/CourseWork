@@ -33,4 +33,10 @@ public class RESTController {
         return new Score(game.getQuestionLib().getScore());
     }
 
+    @CrossOrigin
+    @RequestMapping(path="/newGame", method=RequestMethod.GET)
+    public void newGame() {
+        game = new Game();
+    }
+
 }

@@ -7,11 +7,20 @@
   <!-- SCROLLS -->
   <link rel="stylesheet" href="bootstrap.min.css" />
   <link rel="stylesheet" href="font-awesome.css" />
+  <link rel="stylesheet" href="angular-material.min.css" />
 
   <!-- SPELLS -->
-  <script src="angular.min.js"></script>
-  <script src="angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
   <script src="script.js"></script>
+
+  <style>
+    li {cursor:pointer;
+        outline: none;}
+  </style>
 </head>
 
 <!-- define angular controller -->
@@ -25,13 +34,45 @@
     </div>
   </nav>
 
-  <div class="container" width="100%">
-    What is the capital of {{question.correctCountry}}?
-    <ul class="list-unstyled">
-      <li ng-repeat="city in question.cities track by $index" ng-click="answerQuestion(0,$index + 1)">
-        {{$index + 1}}. {{city}}
-      </li>
-    </ul>
+  <div ng-cloak>
+    <md-content>
+      <md-tabs md-dynamic-height md-border-bottom md-selected="myTabIndex">
+        <md-tab ng-repeat="i in array" label="Q{{i.num + 1}}" ng-click="getQuestion(i.num)">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">What is the capital of {{question.correctCountry}}?</h1>
+            <ul class="list-unstyled">
+              <li ng-repeat="city in question.cities track by $index" ng-click="answerQuestion(i.num,$index + 1)">
+                {{$index + 1}}. {{city}}
+              </li>
+              <div ng-show="i.lock">
+                <div>
+                  <h3>{{correct? 'Well Done' : 'Sorry' }} the correct answer was {{question.correctCity}}.</h3>
+                </div>
+                <div>
+                  <md-button class="md-raised" ng-click="nextTab()">
+                    {{ i.num != 9 ? 'Next >' : 'Results >' }}
+                  </md-button>
+                </div>
+              </div>
+            </ul>
+          </md-content>
+        </md-tab>
+        <md-tab label="Results" ng-click="getScore()">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">
+              {{ score == 10 ? 'Amazing!' : score > 7 ? 'Well Done!' : score > 4 ? 'Good Try!' : 'Oh dear...' }}
+            </h1>
+            You got {{score}} out of 10!
+            <div>
+              <md-button class="md-raised" ng-click="newGame()">
+                New Game?
+              </md-button>
+            </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+  </div>
 
   </div>
 </body>
