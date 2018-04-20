@@ -6,17 +6,39 @@
 	// create the controller and inject Angular's $scope
 	app.controller('mainController', function($scope, $http) {
 
+        $scope.getQuestion = function(num){
+            var body = { 'num': num };
+            $http({method: 'POST', url: 'http://localhost:8080/getQuestion', params: body}).
+                success(function(data, status, headers, config) {
+                    $scope.question = data;
+                    console.log(data);
+                }).error(function(data, status, headers, config) {
+                    console.log(data);
+                });
+        };
 
-		// create a message to display in our view
-		$scope.message = 'Everyone come and see how good I look!';
-		$http({method: 'GET', url: 'http://localhost:8080/getScore'}).
-            success(function(data, status, headers, config) {
-              // this callback will be called asynchronously
-              // when the response is available
-              console.log(data);
-            }).
-            error(function(data, status, headers, config) {
-              // called asynchronously if an error occurs
-              // or server returns response with an error status.
-            });
+        $scope.answerQuestion = function(num, ans){
+            var body = { 'num': num, 'ans': ans };
+            $http({method: 'POST', url: 'http://localhost:8080/answerQuestion', params: body}).
+                success(function(data, status, headers, config) {
+                    console.log(data);
+                }).error(function(data, status, headers, config) {
+                    console.log(data);
+                });
+        };
+
+
+		$scope.getScore = function(){
+		    $http({method: 'GET', url: 'http://localhost:8080/getScore'}).
+                success(function(data, status, headers, config) {
+                    $scope.score = data.score;
+                }).
+                error(function(data, status, headers, config) {
+                    console.log(data);
+                });
+        };
+
+        $scope.getQuestion(0);
+        $scope.answerQuestion(0,3);
+        $scope.getScore();
 	});

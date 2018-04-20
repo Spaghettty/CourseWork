@@ -26,7 +26,13 @@
   </nav>
 
   <div class="container" width="100%">
-    {{message}}
+    What is the capital of {{question.correctCountry}}?
+    <ul class="list-unstyled">
+      <li ng-repeat="city in question.cities track by $index" ng-click="answerQuestion(0,$index + 1)">
+        {{$index + 1}}. {{city}}
+      </li>
+    </ul>
+
   </div>
 </body>
 
