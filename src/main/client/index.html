@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!-- define angular app -->
-<html ng-app="scotchApp">
+<html ng-app="app">
 
 <head>
   <!-- SCROLLS -->
@@ -25,16 +25,9 @@
     </div>
   </nav>
 
-  <div id="main">
-  
-    <!-- angular templating -->
-		<!-- this is where content will be injected -->
-    <div ng-view>
-		
-	</div>
-    
+  <div class="container" width="100%">
+    {{message}}
   </div>
-  
 </body>
 
 </html>
