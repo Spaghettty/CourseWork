@@ -2,11 +2,27 @@ package coursework;
 
 import coursework.game.Game;
 import coursework.lib.QuestionLib;
-import java.util.Scanner;
+import coursework.rest.RESTController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
+import java.util.Scanner;
+import java.util.concurrent.LinkedBlockingQueue;
+
+@SpringBootApplication
 public class App {
+
+	@Bean
+	public Game game(){
+		return new Game();
+	}
+
 	public static void main(String[] args) {
-		Game game = new Game();
-		game.run();
+
+		//Game game = new Game();
+		//game.run();
+		SpringApplication.run(App.class, args);
 	}
 }

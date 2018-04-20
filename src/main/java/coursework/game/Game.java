@@ -1,5 +1,6 @@
 package coursework.game;
 
+import coursework.lib.Question;
 import coursework.lib.QuestionLib;
 
 import java.util.Scanner;
@@ -19,6 +20,14 @@ public class Game {
             answerQuestion(questionNumber);
         }
         System.out.println("You got " + questionLib.getScore() + " out of " + questionLib.getMaxQuestions());
+    }
+
+    public Question getQuestion(int num){
+        return questionLib.getQuestion(num);
+    }
+
+    public QuestionLib getQuestionLib(){
+        return questionLib;
     }
 
     private void answerQuestion(int questionNumber) {
