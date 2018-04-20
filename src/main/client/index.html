@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="scotchApp">
+
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="font-awesome.css" />
+
+  <!-- SPELLS -->
+  <script src="angular.min.js"></script>
+  <script src="angular-route.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand">Paddy's Capital City Guesser XTREME featuring Cardi B</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view>
+		
+	</div>
+    
+  </div>
+  
+</body>
+
+</html>
