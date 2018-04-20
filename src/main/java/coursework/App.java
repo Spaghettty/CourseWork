@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.io.Console;
 import java.util.Scanner;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -20,9 +21,6 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-
-		//Game game = new Game();
-		//game.run();
 		SpringApplication.run(App.class, args);
 	}
 }
