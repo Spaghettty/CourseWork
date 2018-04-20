@@ -1,8 +1,11 @@
 package coursework.game;
 
 import javax.swing.*;
+
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
 
 public class GameGui {
     private JTextField answer;
@@ -31,5 +34,9 @@ public class GameGui {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
     }
+
+
+
 }
